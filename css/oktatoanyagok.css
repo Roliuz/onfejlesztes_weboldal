@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Agdasima&family=Bebas+Neue&family=Maven+Pro:wght@400;500&family=Oswald:wght@200;300;600;700&family=PT+Sans+Narrow&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Bebas neue', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+}
+
+html {
+    text-decoration: none;
+}
+
+*::selection {
+    color: white;
+    background-color: #FDAA2C;
+
+}
+
+::-webkit-scrollbar {
+    display: none !important;
+
+}
+
+::-webkit-scrollbar-track {
+    background-color: none;
+
+}
+
+
+
+.konyv-cim {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.konyv-cim h1 {
+    font-size: 2.8rem;
+}
+
+hr {
+    border-top: 5px solid #FDAA2C;
+}
+
+@media(max-width: 994px) {
+    .konyv-cim h1 {
+        font-size: 2rem;
+    }
+}
+
+@media(max-width: 776px) {
+    .konyv-cim h1 {
+        font-size: 1.2rem;
+    }
+}
+
+
+
+
+/* --könyvek animációja */
+
+@import url('https://fonts.googleapis.com/css2?family=Pontano+Sans&family=Stint+Ultra+Expanded&display=swap');
+
+:root {
+    --perspective: 1000px;
+    --link-color: #010790;
+}
+
+.book {
+    position: relative;
+    width: 320px;
+    height: 453px;
+    margin: 0 auto;
+    margin-top: 5rem;
+}
+
+.gloss {
+    position: absolute;
+    top: 0;
+    z-index: 200;
+    overflow: hidden;
+    width: 20%;
+    height: 100%;
+    opacity: 0.5;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+    transition: all .5s;
+    transform: translateX(-50%) rotateY(0deg);
+    transform-origin: left center;
+}
+
+.cover {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    z-index: 5;
+    transition: transform .5s;
+    transform: translateX(0);
+    transform-origin: left center;
+    backface-visibility: hidden;
+    display: flex;
+    border-radius: 10px;
+
+}
+
+.description {
+    position: absolute;
+    display: inline;
+    left: 0;
+    top: 0;
+    width: inherit;
+    height: inherit;
+    border: solid 1px grey;
+    background: white;
+    transition: all 1s;
+    padding: 10% 10%;
+    padding-top: 5%;
+    z-index: 1;
+    font-size: calc(0.8em + .05vw);
+    overflow-wrap: break-word;
+    border-radius: 10px;
+    width: 80%;
+    height: 80%;
+}
+
+.description p {
+    padding-bottom: 50%;
+}
+
+.description h1 {
+    font-family: 'Pontano Sans', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.25em;
+}
+
+.book:hover {
+    cursor: pointer;
+}
+
+.book:hover .cover {
+    transform: perspective(var(--perspective)) rotateY(-80deg);
+}
+
+.book:hover .gloss {
+    transform: perspective(var(--perspective)) rotateY(-80deg) translateX(100%) scaleX(5);
+}
+
+.book:hover .description {
+    transform: translateX(20%);
+}
+
+.konyvcimek {
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: -4rem;
+}
+
+/* --lista-- */
+
+ol {
+    list-style-type: none;
+    counter-reset: my-counter;
+}
+
+ol li {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+ol li::before {
+    content: counter(my-counter) ".";
+    counter-increment: my-counter;
+    font-weight: bold;
+    font-size: 1.4em;
+    margin-right: 0.5em;
+}
+
+.dolog5 {
+    animation: slideInLeft 1s forwards;
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.siker-garantal p {
+    font-size: 1.6rem;
+}
+
+p {
+    font-weight: lighter;
+}
